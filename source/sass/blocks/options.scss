@@ -47,7 +47,6 @@
 }
 
 .options__nav-button {
-  width: 100%;
   height: 45px;
   background: $gradient-options;
   border: none;
@@ -140,7 +139,6 @@
 }
 
 .options__menu-wrapper {
-  width: 100%;
   height: 38px;
   padding: 0 22px 0 19px;
   list-style: none;
@@ -387,7 +385,6 @@
 }
 
 .options__info-text-wrapper {
-  width: 100%;
   margin-top: 23px;
   padding: 7px 15px;
   border-radius: 11px;
@@ -413,8 +410,6 @@
 }
 
 .options__wrapper-button {
-  margin: 0 45px;
-
   @media (min-width: $desktop-width) {
     margin-left: 0;
   }
