@@ -79,7 +79,10 @@ exports.svgstack = svgstack;
 const copy = (done) => {
   src([
     'source/fonts/*.{woff2,woff}',
+    'source/*.ico',
+    'source/img/favicon/favicon.svg',
     'source/img/**/*.{jpg,png}',
+    'source/*.webmanifest',
   ], {
     base: 'source',
   })
@@ -102,7 +105,8 @@ exports.copyvideo = copyvideo;
 const copymodules = (done) => {
   src([
     'node_modules/swiper/swiper-bundle.min.js',
-    'node_modules/leaflet/dist/leaflet.{css,js}',
+    'node_modules/nouislider/dist/nouislider.min.css',
+    'node_modules/nouislider/dist/nouislider.min.js',
   ], {
     base: 'node_modules',
   })
