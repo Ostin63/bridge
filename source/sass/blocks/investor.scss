@@ -1,0 +1,202 @@
+.investor {
+  padding: 44px 0 46px;
+  display: grid;
+  grid-template-columns: 18px 1fr 18px;
+  background: var(--black);
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: 1fr 1185px 1fr;
+  }
+}
+
+.investor__title {
+  margin: 0;
+  grid-column: 2 / -2;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 126%;
+  font-family: $font-sfuiIdisplay;
+  color: var(--white);
+
+  @media (min-width: $tablet-width) {
+    font-size: 60px;
+  }
+}
+
+.investor__info {
+  margin: 29px 0 0 0;
+  padding: 0;
+  counter-reset: list1;
+  grid-column: 2 / -2;
+
+  @media (min-width: $tablet-width) {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 80px 0 65px;
+  }
+}
+
+.investor__info-item {
+  position: relative;
+  height: 92px;
+  margin-bottom: 15px;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:last-child {
+    padding-right: 0;
+  }
+
+  @media (min-width: $tablet-width) {
+    height: 160px;
+    flex-direction: row;
+    padding-right: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    height: 210px;
+  }
+
+  &::before {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--grey);
+    font-weight: 300;
+    font-size: 27.4286px;
+    line-height: 99.5%;
+    font-family: $font-sfuiIdisplay;
+    color: var(--yellow-content);
+    counter-increment: list1;
+    content: counter(list1) "";
+
+    @media (min-width: $desktop-width) {
+      width: 150px;
+      height: 150px;
+      left: 20px;
+      font-size: 60px;
+    }
+  }
+}
+
+.investor__info-text {
+  margin: 0;
+  padding-left: 94px;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 145%;
+  font-family: $font-sfuiIdisplay;
+  color: var(--white);
+
+  @media (min-width: $tablet-width) {
+    width: 120px;
+    padding: 80px 0 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 200px;
+    padding: 160px 0 0;
+    text-align: center;
+  }
+}
+
+.investor__svg-arrow {
+  width: 22px;
+  height: 13px;
+  margin: 0 0 0 20px;
+  fill: var(--yellow-svg);
+  transform: rotate(90deg);
+
+  @media (min-width: $tablet-width) {
+    width: 46px;
+    height: 27px;
+    margin: 20px 30px 0 -20px;
+    transform: rotate(0);
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 60px -35px 0 35px;
+  }
+}
+
+.investor__button-wrapper {
+  grid-column: 2 / -2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+  }
+}
+
+.investor__button {
+  width: 195px;
+  height: 42px;
+  padding: 0 23.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $gradient-button;
+  box-shadow: $shadow;
+  border-radius: 32.8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 99.5%;
+  font-family: $font-sfuiIdisplay;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  color: var(--black);
+
+  &:hover,
+  &:focus {
+    background: var(--yellow-hover);
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 265px;
+    height: 53px;
+    padding: 0 38px;
+    font-size: 15px;
+  }
+
+  &--documents {
+    margin-top: 18px;
+    text-align: center;
+    letter-spacing: 0.07em;
+    border: $border-grey;
+    background: var(--black);
+    color: var(--grey-color);
+
+    &:hover,
+    &:focus {
+      color: var(--black);
+    }
+
+    @media (min-width: $tablet-width) {
+      margin: 0 0 0 45px;
+    }
+  }
+}
+
+.investor__svg-button {
+  width: 19px;
+  height: 12px;
+  fill: var(--black);
+
+  @media (min-width: $tablet-width) {
+    width: 28px;
+    height: 17px;
+  }
+}

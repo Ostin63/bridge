@@ -1,0 +1,53 @@
+$tablet-width: 768px;
+$desktop-width: 1370px;
+$desktop-width-max: 1440px;
+
+:root {
+  --white: #ffffff;
+  --white-0: rgba(155, 155, 155, 0);
+  --white-30: rgba(255, 255, 255, 0.3);
+  --white-50: rgba(255, 255, 255, 0.5);
+  --black: #000000;
+  --black-options: #141414;
+  --black-0: rgba(20, 20, 20, 0);
+  --black-25: rgba(0, 0, 0, 0.25);
+  --black-60: rgba(0, 0, 0, 0.6);
+  --black-75: rgba(0, 0, 0, 0.975);
+  --special-black: #060416;
+  --grey: #181818;
+  --yellow: #ff970a;
+  --yellow-10: #ff9a10;
+  --yellow-19: #ff9519;
+  --yellow-41: rgba(255, 151, 10, 0.41);
+  --yellow-svg: #ff9619;
+  --yellow-content: #ff9618;
+  --yellow-hover: #f8d8aa;
+  --red: #ff0000;
+  --special-grey: #a3a3a3;
+  --grey-text: #a9a9a9;
+  --grey-table: #c0c0c0;
+  --grey-radio: #696969;
+  --grey-border: #7c7571;
+  --grey-color: #a2a2a2;
+  --grey-light: #2b2b2b;
+  --grey-guaranty: #4c4c4c;
+  --grey-social: #2c2c2c;
+  --grey-form: #a1a1a1;
+}
+
+$font-inter: "Inter", "Arial", sans-serif;
+$font-sfuiIdisplay: "SFUIDisplay", "Arial", ans-serif;
+$font-gothampro: "GothamPro", "Arial", sans-serif;
+
+$gradient-black: linear-gradient(0deg, var(--black), var(--black-25));
+$gradient-options: linear-gradient(180deg, var(--black-options) 0%, var(--black-0) 100%);
+$gradient-white: linear-gradient(124.94deg, var(--black-25) -120.88%, var(--white-0) 127.52%);
+$gradient-button: linear-gradient(52.76deg, var(--yellow-10) 18.82%, var(--yellow-19) 77.36%);
+
+$border-30: 1px solid var(--white-30);
+$border-30-2: 2px solid var(--white-30);
+$border-yellow: 1.5px solid var(--yellow);
+$border-grey: 1px solid var(--grey-border);
+$border-guaranty: 1px solid var(--grey-guaranty);
+
+$shadow: 0 2.4px 12px var(--yellow-41);

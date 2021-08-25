@@ -1,0 +1,139 @@
+.promo {
+  padding: 19px 0 30px;
+  display: grid;
+  grid-template-columns: 19px 1fr 17px;
+  background-color: var(--black);
+  border-bottom: $border-30;
+
+  @media (min-width: $tablet-width) {
+    padding: 69px 0 125px;
+    border-bottom: none;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: 1fr 50px 1275px 20px 1fr;
+    border-bottom: none;
+  }
+}
+
+.promo__top-wrapper {
+  max-width: 1060px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  grid-column: 2 / -2;
+}
+
+.promo__text-number {
+  margin: 0;
+  font-weight: bold;
+  font-size: 44.0427px;
+  line-height: 99.5%;
+  font-family: $font-sfuiIdisplay;
+  color: var(--white);
+
+  @media (min-width: $tablet-width) {
+    font-size: 103.893px;
+  }
+}
+
+.promo__text {
+  width: 285px;
+  margin: 0;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 118%;
+  font-family: $font-sfuiIdisplay;
+  color: var(--special-grey);
+
+  @media (min-width: $tablet-width) {
+    width: 345px;
+    font-size: 20px;
+  }
+}
+
+.promo__text-week {
+  margin: 25px 0 10px 0;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 99.5%;
+  font-family: $font-sfuiIdisplay;
+  color: var(--yellow);
+  grid-column: 2 / -2;
+
+  @media (min-width: $tablet-width) {
+    margin: 39px 0 24px 0;
+    font-size: 15px;
+  }
+}
+
+.promo__info {
+  position: relative;
+  max-width: 714px;
+  grid-column: 2 / -2;
+
+  &::after {
+    @media (min-width: $desktop-width) {
+      position: absolute;
+      content: "";
+      width: 332px;
+      height: 195px;
+      top: -95px;
+      right: -570px;
+      background-image: url("../img/berg.png");
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: 332px 195px;
+    }
+  }
+}
+
+.promo__info-text {
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 99.5%;
+  font-family: $font-sfuiIdisplay;
+  color: var(--white);
+
+  @media (min-width: $tablet-width) {
+    font-size: 53.5005px;
+  }
+
+  &--size {
+    color: var(--yellow);
+  }
+}
+
+.promo__info-title {
+  position: relative;
+  text-align: left;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 99.5%;
+  font-family: $font-sfuiIdisplay;
+  color: var(--white);
+
+  @media (min-width: $tablet-width) {
+    padding-top: 10px;
+    font-size: 15px;
+  }
+}
+
+.promo__info-title-img {
+  margin-top: -5px;
+  margin-left: 5px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: -10px;
+    margin-left: 15px;
+  }
+
+  &--size {
+    margin-left: 25px;
+
+    @media (min-width: $tablet-width) {
+      margin-left: 45px;
+    }
+  }
+}
