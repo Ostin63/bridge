@@ -191,7 +191,7 @@
 
 .calculator__input {
   &--slider {
-    width: 85px;
+    width: 100%;
     border: none;
     background: var(--grey);
     font-weight: 500;
@@ -219,7 +219,7 @@
   }
 
   &--pay-top {
-    width: 160px;
+    width: 100%;
     margin-top: 8px;
     background: var(--black);
     border: none;
@@ -236,7 +236,7 @@
   }
 
   &--pay {
-    width: 50px;
+    width: 75px;
     margin-top: 7px;
     background: var(--black);
     border: none;
@@ -253,7 +253,7 @@
   }
 
   &--pay-right {
-    width: 145px;
+    width: 155px;
     margin-top: 7px;
     background: var(--black);
     border: none;

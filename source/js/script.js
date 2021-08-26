@@ -114,7 +114,7 @@ onToggleMenuItem(optionsTrustMenuItems, optionsMenuArrows, optionsMenus);
 onToggleMenuItem(optionsSpecificMenuItems, optionsMenuArrows, optionsMenus);
 // Калькулятор
 
-valueElementRange.value = 2050000;
+valueElementRange.value = `${2050000  }₽`;
 
 noUiSlider.create(sliderElement, {
   range: {
@@ -127,26 +127,25 @@ noUiSlider.create(sliderElement, {
 });
 
 sliderElement.noUiSlider.on('update', (_, handle, unencoded) => {
-  valueElementRange.value = Math.round(unencoded[handle]);
-
-  const valueRange = Number(valueElementRange.value);
+  const valueRange = Number(Math.round(unencoded[handle]));
+  valueElementRange.value = `${valueRange  }₽`;
 
   if (valueRange < 249000) {
-    valueElementPay.value = 12;
-    valueMonthlyPay.value = Math.round(valueRange * 12 / 100 / 12);
-    valueYearlyPay.value =  valueRange * 12 / 100;
+    valueElementPay.value = `${12  }%`;
+    valueMonthlyPay.value = `${Math.round(valueRange * 12 / 100 / 12)  }₽`;
+    valueYearlyPay.value =  `${valueRange * 12 / 100  }₽`;
   } else if (valueRange < 449000) {
-    valueElementPay.value = 14;
-    valueMonthlyPay.value = Math.round(valueRange * 14 / 100 / 12);
-    valueYearlyPay.value = valueRange * 14 / 100;
+    valueElementPay.value = `${14  }%`;
+    valueMonthlyPay.value = `${Math.round(valueRange * 14 / 100 / 12)  }₽`;
+    valueYearlyPay.value = `${valueRange * 14 / 100  }₽`;
   } else if (valueRange < 1000000) {
-    valueElementPay.value = 16;
-    valueMonthlyPay.value = Math.round(valueRange * 16 / 100 / 12);
-    valueYearlyPay.value = valueRange * 16 / 100;
+    valueElementPay.value = `${16  }%`;
+    valueMonthlyPay.value = `${Math.round(valueRange * 16 / 100 / 12)  }₽`;
+    valueYearlyPay.value = `${valueRange * 16 / 100  }₽`;
   } else {
-    valueElementPay.value = 18;
-    valueMonthlyPay.value = Math.round(valueRange * 18 / 100 / 12);
-    valueYearlyPay.value = valueRange * 18 / 100;
+    valueElementPay.value = `${18  }%`;
+    valueMonthlyPay.value = `${Math.round(valueRange * 18 / 100 / 12)  }₽`;
+    valueYearlyPay.value = `${valueRange * 18 / 100  }₽`;
   }
 });
 
