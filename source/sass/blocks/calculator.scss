@@ -125,6 +125,7 @@
   }
 
   &--pay {
+    margin-left: -5px;
     display: flex;
   }
 
@@ -164,6 +165,7 @@
   &--pay-top {
     width: 100%;
     margin-top: 8px;
+    padding: 0;
     background: var(--black);
     border: none;
     font-weight: bold;
@@ -171,6 +173,7 @@
     line-height: 99.5%;
     font-family: $font-sfuiIdisplay;
     color: var(--white);
+    outline: none;
 
     @media (min-width: $tablet-width) {
       font-size: 50px;
@@ -180,13 +183,15 @@
   &--pay {
     width: 88px;
     margin-top: 7px;
+    padding: 0;
     background: var(--black);
     border: none;
     font-weight: bold;
-    font-size: 31px;
+    font-size: 29px;
     line-height: 99.5%;
     font-family: $font-sfuiIdisplay;
     color: var(--white);
+    outline: none;
 
     @media (min-width: $tablet-width) {
       width: 120px;
@@ -197,13 +202,15 @@
   &--pay-right {
     width: 168px;
     margin-top: 7px;
+    padding: 0;
     background: var(--black);
     border: none;
     font-weight: bold;
-    font-size: 31px;
+    font-size: 29px;
     line-height: 99.5%;
     font-family: $font-sfuiIdisplay;
     color: var(--white);
+    outline: none;
 
     @media (min-width: $tablet-width) {
       width: 230px;
