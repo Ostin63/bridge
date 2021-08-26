@@ -10,6 +10,10 @@ const valueElementPay = calculatorForm.querySelector('.calculator__input--pay');
 const valueMonthlyPay = calculatorForm.querySelector('.calculator__input--pay-top');
 const valueYearlyPay = calculatorForm.querySelector('.calculator__input--pay-right');
 
+const successCalculator = body.querySelector('#success-calculator')
+  .content
+  .querySelector('.success-calculator');
+
 const navButton = body.querySelector('.header__button-nav');
 const modalNav = body.querySelector('.header__nav-wrapper');
 const navClose = modalNav.querySelector('.header__nav-close');
@@ -38,6 +42,7 @@ const errorSuccess = body.querySelector('#error-loading')
   .content
   .querySelector('.error-loading');
 
+const successCalculatorElement = successCalculator.cloneNode(true);
 const successElement = success.cloneNode(true);
 const errorElement = errorSuccess.cloneNode(true);
 
@@ -85,11 +90,11 @@ const onToggleMenuItem = (MenuItems, arrows, menus) => {
   for (let i = 0; i < MenuItems.length; i++) {
     MenuItems[i].addEventListener('click', (evt) => {
       evt.preventDefault();
-      for (let i = 0; i < MenuItems.length; i++){
+      for (let i = 0; i < MenuItems.length; i++) {
         MenuItems[i].classList.remove('active');
       }
       MenuItems[i].classList.add('active');
-      for (let i = 0; i < arrows.length; i++){
+      for (let i = 0; i < arrows.length; i++) {
         arrows[i].classList.remove('active');
         menus[i].classList.remove('show');
       }
@@ -114,7 +119,7 @@ onToggleMenuItem(optionsTrustMenuItems, optionsMenuArrows, optionsMenus);
 onToggleMenuItem(optionsSpecificMenuItems, optionsMenuArrows, optionsMenus);
 // Калькулятор
 
-valueElementRange.value = `${2050000  }₽`;
+valueElementRange.value = `${2050000}₽`;
 
 noUiSlider.create(sliderElement, {
   range: {
@@ -128,24 +133,24 @@ noUiSlider.create(sliderElement, {
 
 sliderElement.noUiSlider.on('update', (_, handle, unencoded) => {
   const valueRange = Number(Math.round(unencoded[handle]));
-  valueElementRange.value = `${valueRange  }₽`;
+  valueElementRange.value = `${valueRange}₽`;
 
   if (valueRange < 249000) {
-    valueElementPay.value = `${12  }%`;
-    valueMonthlyPay.value = `${Math.round(valueRange * 12 / 100 / 12)  }₽`;
-    valueYearlyPay.value =  `${valueRange * 12 / 100  }₽`;
+    valueElementPay.value = `${12}%`;
+    valueMonthlyPay.value = `${Math.round(valueRange * 12 / 100 / 12)}₽`;
+    valueYearlyPay.value = `${valueRange * 12 / 100}₽`;
   } else if (valueRange < 449000) {
-    valueElementPay.value = `${14  }%`;
-    valueMonthlyPay.value = `${Math.round(valueRange * 14 / 100 / 12)  }₽`;
-    valueYearlyPay.value = `${valueRange * 14 / 100  }₽`;
+    valueElementPay.value = `${14}%`;
+    valueMonthlyPay.value = `${Math.round(valueRange * 14 / 100 / 12)}₽`;
+    valueYearlyPay.value = `${valueRange * 14 / 100}₽`;
   } else if (valueRange < 1000000) {
-    valueElementPay.value = `${16  }%`;
-    valueMonthlyPay.value = `${Math.round(valueRange * 16 / 100 / 12)  }₽`;
-    valueYearlyPay.value = `${valueRange * 16 / 100  }₽`;
+    valueElementPay.value = `${16}%`;
+    valueMonthlyPay.value = `${Math.round(valueRange * 16 / 100 / 12)}₽`;
+    valueYearlyPay.value = `${valueRange * 16 / 100}₽`;
   } else {
-    valueElementPay.value = `${18  }%`;
-    valueMonthlyPay.value = `${Math.round(valueRange * 18 / 100 / 12)  }₽`;
-    valueYearlyPay.value = `${valueRange * 18 / 100  }₽`;
+    valueElementPay.value = `${18}%`;
+    valueMonthlyPay.value = `${Math.round(valueRange * 18 / 100 / 12)}₽`;
+    valueYearlyPay.value = `${valueRange * 18 / 100}₽`;
   }
 });
 
@@ -178,6 +183,18 @@ new Swiper('.swiper-container', {
 //Отправка формы
 const isEscEvent = (evt) => evt.key === keys.escape || evt.key === keys.esc;
 
+const onSuccessCalculatorRemove = () => {
+  successCalculatorElement.remove();
+  document.removeEventListener('click', onSuccessCalculatorRemove);
+};
+
+const onElementCalculatorEscRemove = () => {
+  if (isEscEvent) {
+    onSuccessCalculatorRemove();
+    document.removeEventListener('keydown', onElementCalculatorEscRemove);
+  }
+};
+
 const onSuccessRemove = () => {
   successElement.remove();
   document.removeEventListener('click', onSuccessRemove);
@@ -190,6 +207,12 @@ const onElementEscRemove = () => {
   }
 };
 
+const alertSuccessCalculator = () => {
+  body.append(successCalculatorElement);
+  document.addEventListener('keydown', onElementCalculatorEscRemove);
+  document.addEventListener('click', onSuccessCalculatorRemove);
+};
+
 const alertSuccess = () => {
   body.append(successElement);
   document.addEventListener('keydown', onElementEscRemove);
@@ -199,6 +222,10 @@ const alertSuccess = () => {
 const resetForm = () => {
   fieldName.value = '';
   fieldTel.value = '';
+};
+
+const alertCalculatorForm = () => {
+  alertSuccessCalculator();
 };
 
 const alertForm = () => {
@@ -241,6 +268,13 @@ const sendData = (url, bodyForm, alertSucces, error) => {
     });
 };
 
+const onCalculatorFormSend = (evt) => {
+  evt.preventDefault();
+  const formData = new FormData(evt.target);
+
+  sendData(dataSabmitUrl, formData, alertCalculatorForm, alertErrorloading);
+};
+
 const onFormSend = (evt) => {
   evt.preventDefault();
   const formData = new FormData(evt.target);
@@ -248,4 +282,5 @@ const onFormSend = (evt) => {
   sendData(dataSabmitUrl, formData, alertForm, alertErrorloading);
 };
 
+calculatorForm.addEventListener('submit', onCalculatorFormSend);
 form.addEventListener('submit', onFormSend);

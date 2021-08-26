@@ -364,13 +364,14 @@
     </section>
     <section class="calculator">
       <h2 class="calculator__title">Калькулятор дохода в <br>Доверительном Управлении</h2>
-      <form class="calculator__form"  action="https://echo.htmlacademy.ru/" method="post">
+      <form class="calculator__form" action="https://echo.htmlacademy.ru/" method="post">
         <div class="calculator__form-wrapper calculator__form-wrapper--top">
           <fieldset class="calculator__fieldset calculator__fieldset--slider">
             <legend class="calculator__legend">Сумма сбережений</legend>
-            <label class="calculator__label"></label>
+            <label class="calculator__label" for="deposit"></label>
             <div class="calculator__wrapper-input-slider">
-              <input class="calculator__input calculator__input--slider" value="2 050 000 ₽">
+              <input class="calculator__input calculator__input--slider" id="deposit" name="deposit"
+                value="2 050 000 ₽">
             </div>
             <div class="calculator__slider" id="slider"></div>
             <div class="calculator__sum-wrapper">
@@ -417,15 +418,16 @@
                 <label class="calculator__label calculator__label--pay" for="monthlyСharge">Ежемесячное
                   начисление</label>
                 <div class="calculator__input-wrapper calculator__input-wrapper--pay-top">
-                  <input class="calculator__input calculator__input--pay-top" type="text" id="monthlyСharge"
-                    value="22 208 ₽">
+                  <input class="calculator__input calculator__input--pay-top" type="text" name="monty"
+                    id="monthlyСharge" value="22 208 ₽">
                 </div>
               </li>
               <li class="calculator__item-reckoning calculator__item-reckoning--bottom">
                 <div class="calculator__wrapper-pay">
                   <label class="calculator__label calculator__label--pay" for="income">Доход</label>
                   <div class="calculator__input-wrapper calculator__input-wrapper--pay">
-                    <input class="calculator__input calculator__input--pay" type="text" id="income" value="13%">
+                    <input class="calculator__input calculator__input--pay" type="text" id="income" name="income"
+                      value="13%">
                   </div>
                 </div>
                 <div class="calculator__wrapper-pay">
@@ -433,7 +435,7 @@
                     начисление</label>
                   <div class="calculator__input-wrapper calculator__input-wrapper--pay-right">
                     <input class="calculator__input calculator__input--pay-right" type="text" id="annualCharge"
-                      value="316 500 ₽">
+                      name="annual" value="316 500 ₽">
                   </div>
                 </div>
               </li>
@@ -637,6 +639,12 @@
       трафика и настройки подходящей
       рекламы. Оставаясь на сайте, вы соглашаетесь на сбор таких данных.</p>
   </footer>
+
+  <template id="success-calculator">
+    <div class="success-calculator">
+      <p class="success-calculator__message">Поздравляю Вы инвестировали,<br>спасибо! :)</p>
+    </div>
+  </template>
 
   <template id="success">
     <div class="success">
